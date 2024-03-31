@@ -18,7 +18,7 @@ export const ArticleImage: FC<IArticleImageProps> = ({
 }) => {
   return (
     <img
-      src={`${baseUrl}${src}` || defaultSrc}
+      src={`${baseUrl || ''}${src || ''}` || defaultSrc}
       alt={alt}
       className={`w-full h-auto mb-6 rounded ${className}`}
     />
