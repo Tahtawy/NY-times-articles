@@ -1,10 +1,10 @@
 import {
   fetchArticleDetailApi,
   IArticleDetailsResponse,
-} from '@/api/fetchArticleDetails.api';
+} from '@/shared/apis/fetchArticleDetails.api';
 import { useQuery } from '@tanstack/react-query';
 
-export const useArticelDeails = (uri: string) => {
+export const useArticelDetails = (uri: string) => {
   return useQuery<IArticleDetailsResponse>({
     queryKey: ['popularArticles'],
     queryFn: async () => {

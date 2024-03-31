@@ -1,11 +1,14 @@
 import { FC, ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loader from '@/components/Loader';
+import Loader from '@/shared/components/Loader';
+import ArticleImage from '@/shared/components/ArticleImage';
+import ArticleAuthor from '@/shared/components/ArticleAuthor';
+import ArticleDate from '@/features/articles/components/ArticleDate';
 
-import { useArticelDeails } from '@/hooks/useArticelDeails';
-import { formatDate } from '@/helpers/date.utils';
-import { IMultiMedia } from '@/models/article.model';
+import { useArticelDetails } from '@/features/articles/hooks/useArticelDetails';
+
+import { IMultiMedia } from '@/features/articles/models/article.model';
 
 interface IArticleDetailsProps {
   children?: ReactNode;
@@ -13,7 +16,7 @@ interface IArticleDetailsProps {
 
 const ArticleDetailsSection: FC<IArticleDetailsProps> = () => {
   const { uri } = useParams();
-  const { isLoading, data } = useArticelDeails(uri || '');
+  const { isLoading, data } = useArticelDetails(uri || '');
 
   if (isLoading) {
     return <Loader />;
@@ -36,34 +39,23 @@ const ArticleDetailsSection: FC<IArticleDetailsProps> = () => {
       </article>
 
       <figure>
-        <img
-          className='mb-6'
-          src={`${imageUrl ? `http://www.nytimes.com/${imageUrl}` : 'https://placehold.co/1024x680'}`}
-          alt='Article Image'
+        <ArticleImage
+          src={imageUrl}
+          baseUrl='http://www.nytimes.com/'
+          defaultSrc='https://placehold.co/1024x680'
+          alt={data?.response?.docs?.[0]?.snippet || 'article image'}
         />
       </figure>
 
       <article className='max-w-2xl text-text-secondary text-sm'>
         <div className='mb-5'>
-          <p className='itemalign-self-start mb-1'>
-            {data?.response?.docs?.[0]?.byline?.original
-              ?.split(', ')
-              .map((author, index) => (
-                <>
-                  <a href='#' key={author} className='underline font-semibold'>
-                    {author}
-                  </a>
-                  {index <
-                    data?.response?.docs?.[0]?.byline?.original?.split(', ')
-                      .length -
-                      1 && <span>, </span>}
-                </>
-              ))}
-          </p>
+          <div className='itemalign-self-start mb-1'>
+            <ArticleAuthor
+              authors={data?.response?.docs?.[0]?.byline?.original}
+            />
+          </div>
 
-          <span>
-            {formatDate(data?.response?.docs?.[0]?.pub_date as string)}
-          </span>
+          <ArticleDate date={data?.response?.docs?.[0]?.pub_date} />
         </div>
 
         <p className='text-xl max-w-2xl'>

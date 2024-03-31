@@ -1,7 +1,7 @@
 import { AxiosPromise } from 'axios';
 import axios, { api_key } from './api';
 
-import { IArticle } from '@/models/article.model';
+import { IArticle } from '@/features/articles/models/article.model';
 
 export interface IListPopularArticlesResponse {
   copyright: string;

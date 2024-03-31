@@ -1,7 +1,7 @@
 import {
   IListPopularArticlesResponse,
   fetchArticlesApi,
-} from '@/api/fetchArticles.api';
+} from '@/shared/apis/fetchArticles.api';
 import { useQuery } from '@tanstack/react-query';
 
 export const usePopularArticles = () => {

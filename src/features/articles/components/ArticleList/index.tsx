@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import ArticleCard from '@/components/ArticleCard';
+import ArticleCard from '../ArticleCard';
 
-import { usePopularArticles } from '@/hooks/usePopularArticles';
-import Loader from '@/components/Loader';
+import { usePopularArticles } from '@/features/articles/hooks/usePopularArticles';
+import Loader from '@/shared/components/Loader';
 
 const ArticleList: FC = () => {
   const { isLoading, data } = usePopularArticles();
