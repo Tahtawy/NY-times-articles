@@ -7,9 +7,10 @@ import {
   ApiRequestConfig,
 } from './api.types';
 
+export const api_key = import.meta.env.VITE_API_KEY;
+
 const axiosParams = {
-  baseURL:
-    process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : '',
+  baseURL: import.meta.env.VITE_API_URL,
 };
 
 const axiosInstance = axios.create(axiosParams);

@@ -19,6 +19,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@images': fileURLToPath(new URL('/images', import.meta.url)),
       'test-utils': fileURLToPath(
         new URL('./src/helpers/test-utils.tsx', import.meta.url)
       ),

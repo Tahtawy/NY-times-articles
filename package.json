@@ -26,11 +26,16 @@
     "./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.28.9",
     "axios": "^1.6.2",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vitest-globals": "^1.4.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.6.0",
