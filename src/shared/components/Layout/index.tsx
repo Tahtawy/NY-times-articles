@@ -12,9 +12,11 @@ const Layout: FC = () => {
           <img src={Logo} width={300} />
         </div>
         <ul className={`${styles.navbarRight}`}>
-          <Link to='/' className={`${styles.navLink}`}>
-            Home
-          </Link>
+          <li>
+            <Link to='/' className={`${styles.navLink}`}>
+              Home
+            </Link>
+          </li>
         </ul>
       </header>
       <main>

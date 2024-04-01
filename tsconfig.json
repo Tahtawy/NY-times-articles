@@ -22,6 +22,6 @@
       "test-utils": ["src/helpers/test-utils"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "cypress"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
