@@ -13,6 +13,7 @@ This is a React application that allows users to view the most viewed articles f
 - **TypeScript**: Typed superset of JavaScript.
 - **Vite**: Frontend build tool.
 - **Cypress**: End-to-end testing framework.
+- **Istanbul**: JavaScript test coverage report generator.
 - **Vitest**: Testing library for Vite projects.
 - **ESLint**: JavaScript and TypeScript linter.
 - **Prettier**: Code formatter.
@@ -66,6 +67,12 @@ This is a React application that allows users to view the most viewed articles f
     
       ```bash
          npm run test:e2e
+
+   ### Test coverage
+    
+  1. To generate test coverage report (I used [Istanbul](https://istanbul.js.org/)) run:
+      ```bash
+         npm run test:unit:coverage
 
 ## Building
 
