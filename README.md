@@ -38,7 +38,7 @@ This is a React application that allows users to view the most viewed articles f
 
 ## Configuration
 
-1. Before running the application, you need to obtain an API key from the New York Times API. Once you have the API key, create a .env file in the root directory of the project and add the following lines:
+1. Before running the application, you need to obtain an API key from [the New York Times API](https://developer.nytimes.com/) by creating new app and enable both (Article Search API, Most Popular API). Once you have the API key, create a .env file in the root directory of the project and add the following lines:
 
     ```bash
        VITE_API_URL=https://api.nytimes.com/svc
